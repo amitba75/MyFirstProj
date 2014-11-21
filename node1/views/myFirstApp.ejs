@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myFirstModule">
+  <head><% include partials/page/head.ejs %>
+
+	
+  </head>
+  
+  <body>
+ 	<div ng-controller="myFirstController">
+	    <h1><%= title %></h1>
+		<p> sample application </p>
+		Name: <br/>
+		<input type="text" ng-model="name"/>
+		<input type="text" ng-model="email"/>
+			<button ng-click="GetUsers()">Get User</button> 
+			<button ng-click="AddUsers()">Add User</button>
+
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users"> 
+					<td> {{user.username}} </td> 
+					<td> {{user.email}} </td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+	<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+	<script type="text/javascript" src="myFirstWSCall.js">	</script> 
+
+</body>
+</html>
